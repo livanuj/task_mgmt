@@ -1,0 +1,28 @@
+<h1> Task List </h1>
+<%= link_to 'New Task', new_task_path %>
+<div id='list' align='left' style="padding-top: 50px;">
+<table  cellpadding="5"  >
+  <tr>
+    <th>Description</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.description %></td>
+    <td><%= task.start_date %></td>
+    <td><%= task.end_date %></td>
+    <td><%= task.created_at %></td>
+    <td><%= task.updated_at %></td>
+    <td><%= link_to 'Show', task_path(task) %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

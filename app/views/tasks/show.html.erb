@@ -1,0 +1,29 @@
+<h1> Show </h1>
+<p>
+  <b>Start:</b>
+  <%= @task.start_date %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @task.end_date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @task.description %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @task.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @task.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %> | 
+<%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
